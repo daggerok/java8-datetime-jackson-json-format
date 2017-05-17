@@ -1,0 +1,8 @@
+= java8-datetime-jackson-json-format image:https://travis-ci.org/daggerok/java8-datetime-jackson-json-format.svg?branch=master["build status", link="https://travis-ci.org/daggerok/java8-datetime-jackson-json-format"]
+
+todo: secured
+
+[source,bash]
+----
+gradle bootRun
+----
