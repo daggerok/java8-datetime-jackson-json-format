@@ -14,6 +14,9 @@ before_install:
   - source "$HOME/.sdkman/bin/sdkman-init.sh"
 script:
   - gradle clean build
+  - java -jar build/libs/*.jar &
+  - sleep 10
+  - curl -v --user user:pass localhost:8080 -H'content-type:application/json' -d'{"value":"test"}'
 after_script:
   - gradle --stop
 cache:
