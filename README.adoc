@@ -1,8 +1,18 @@
-= java8-datetime-jackson-json-format image:https://travis-ci.org/daggerok/java8-datetime-jackson-json-format.svg?branch=master["build status", link="https://travis-ci.org/daggerok/java8-datetime-jackson-json-format"]
+= java8-datetime-jackson-json-format image:https://travis-ci.org/daggerok/java8-datetime-jackson-json-format.svg?branch=secured["build status", link="https://travis-ci.org/daggerok/java8-datetime-jackson-json-format"]
 
-todo: secured
+. spring secured auditing
+. java 8 datetime json converting
 
 [source,bash]
 ----
 gradle bootRun
+http --auth user:pass post :8080 value=test
+{
+    "createdBy": "user",
+    "createdDate": "2017-05-18T03:32:22",
+    "id": 1,
+    "lastModifiedBy": "user",
+    "modifiedDate": "2017-05-18T03:32:353",
+    "value": "test"
+}
 ----

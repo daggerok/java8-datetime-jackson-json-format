@@ -14,7 +14,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
-import java.security.Principal;
 import java.time.LocalDateTime;
 
 @Data
@@ -34,13 +33,13 @@ public abstract class AbstractAuditEntity implements Serializable {
   LocalDateTime createdDate;
 
   @LastModifiedDate
-  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:s")
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:SSS")
   @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
   LocalDateTime modifiedDate;
 
-//  @CreatedBy
-//  Principal createdBy;
-//
-//  @LastModifiedBy
-//  Principal lastModifiedBy;
+  @CreatedBy
+  String createdBy;
+
+  @LastModifiedBy
+  String lastModifiedBy;
 }
