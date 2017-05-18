@@ -25,7 +25,7 @@ public class TestRestController {
 
   @PostMapping
   @Transactional
-  public TestEntity post(@RequestBody String value) {
-    return testRepository.save(TestEntity.of(value));
+  public TestEntity post(@RequestBody TestEntity testEntity) {
+    return testRepository.save(testEntity);
   }
 }

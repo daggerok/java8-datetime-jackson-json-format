@@ -2,9 +2,7 @@ package daggerok.test.audit;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -14,7 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
-import java.security.Principal;
 import java.time.LocalDateTime;
 
 @Data
@@ -37,10 +34,4 @@ public abstract class AbstractAuditEntity implements Serializable {
   @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:s")
   @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
   LocalDateTime modifiedDate;
-
-//  @CreatedBy
-//  Principal createdBy;
-//
-//  @LastModifiedBy
-//  Principal lastModifiedBy;
 }
